@@ -1,0 +1,23 @@
+{
+  "name": "jumper423/yii2-captcha",
+  "description": "Распознавание капч.",
+  "keywords": ["yii2", "captcha", "recognition"],
+  "homepage": "https://github.com/jumper423/yii2-captcha",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "support": {
+    "issues": "https://github.com/jumper423/yii2-captcha/issues?state=open",
+    "source": "https://github.com/jumper423/yii2-captcha"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*"
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "autoload": {
+    "psr-4": {"jumper423\\Captcha\\": ""}
+  }
+}

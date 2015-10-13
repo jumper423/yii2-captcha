@@ -26,7 +26,7 @@ php composer.phar require --prefer-dist jumper423/yii2-captcha "*"
 
 в файл `composer.json`.
 
-Configuration:
+Конфигурация:
 
 ```php
 'components' => [

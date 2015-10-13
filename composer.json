@@ -18,6 +18,6 @@
     "process-timeout": 1800
   },
   "autoload": {
-    "psr-4": {"jumper423\\Captcha\\": ""}
+    "psr-4": {"jumper423\\": ""}
   }
 }

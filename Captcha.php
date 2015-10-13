@@ -139,7 +139,7 @@ class Captcha extends Component
                 'min_len' => $this->minLen,
                 'max_len' => $this->maxLen,
                 'language' => $this->language,
-                'soft_id' => 423,
+                'soft_id' => 882,
             ];
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://{$this->domain}/in.php");

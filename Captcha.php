@@ -1,6 +1,6 @@
 <?php
 
-namespace jumper423;
+namespace jumper423\Captcha;
 
 use yii\base\Component;
 use yii\base\Exception;

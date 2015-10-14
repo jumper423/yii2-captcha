@@ -26,13 +26,14 @@ php composer.phar require --prefer-dist jumper423/yii2-captcha "*"
 
 в файл `composer.json`.
 
-Конфигурация:
+Конфигурация
+------------
 
 ```php
 'components' => [
     'captcha' => [
         'class' => 'jumper423\Captcha',
-        'pathTmp' => '@common/captcha',
+        'pathTmp' => '@app/captcha',
         'apiKey' => '42eab4119020dbc729f657fef270r546',
     ],
 ],
@@ -43,7 +44,19 @@ php composer.phar require --prefer-dist jumper423/yii2-captcha "*"
 Простой пример использования:
 
 ```php
-if (\Yii::$app->captcha->run('path/to/captcha.png')) {
+$path = 'path/to/captcha.png';
+if (\Yii::$app->captcha->run($path)) {
+    $captcha = \Yii::$app->captcha->result()
+} else {
+    throw new Exception(\Yii::$app->captcha->error());
+}
+```
+
+Так же можно применять если у Вас есть только ссылка на капчу, но для этого метода Вам следует прописать путь в конфигурации для сохранения капч (pathTmp):
+
+```php
+$url = 'https://vk.com/captcha.php?sid=698254154192&s=1';
+if (\Yii::$app->captcha->run($url)) {
     $captcha = \Yii::$app->captcha->result()
 } else {
     throw new Exception(\Yii::$app->captcha->error());

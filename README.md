@@ -1,6 +1,6 @@
 Yii2 Captcha
 ================
-Распознавание капч.
+Распознавание капч для всех популярных сервисов rucaptcha.com, 2captcha.com, pixodrom.com, captcha24.com, socialink.ru, anti-captcha.com
 
 Особенности
 ------------

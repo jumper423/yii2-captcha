@@ -46,7 +46,7 @@ php composer.phar require --prefer-dist jumper423/yii2-captcha "*"
 ```php
 $path = 'path/to/captcha.png';
 if (\Yii::$app->captcha->run($path)) {
-    $captcha = \Yii::$app->captcha->result()
+    $captcha = \Yii::$app->captcha->result();
 } else {
     throw new Exception(\Yii::$app->captcha->error());
 }
@@ -57,7 +57,7 @@ if (\Yii::$app->captcha->run($path)) {
 ```php
 $url = 'https://vk.com/captcha.php?sid=698254154192&s=1';
 if (\Yii::$app->captcha->run($url)) {
-    $captcha = \Yii::$app->captcha->result()
+    $captcha = \Yii::$app->captcha->result();
 } else {
     throw new Exception(\Yii::$app->captcha->error());
 }

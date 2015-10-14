@@ -91,7 +91,7 @@ class Captcha extends Component
     private $errors = [
         'ERROR_NO_SLOT_AVAILABLE' => 'Нет свободных работников в данный момент, попробуйте позже либо повысьте свою максимальную ставку здесь',
         'ERROR_ZERO_CAPTCHA_FILESIZE' => 'Размер капчи которую вы загружаете менее 100 байт',
-        'ERROR_TOO_BIG_CAPTCHA_FILESIZE' => 'Ваша капча имеет размер более 20 килобайт',
+        'ERROR_TOO_BIG_CAPTCHA_FILESIZE' => 'Ваша капча имеет размер более 100 килобайт',
         'ERROR_ZERO_BALANCE' => 'Нулевой либо отрицательный баланс',
         'ERROR_IP_NOT_ALLOWED' => 'Запрос с этого IP адреса с текущим ключом отклонен. Пожалуйста смотрите раздел управления доступом по IP',
         'ERROR_CAPTCHA_UNSOLVABLE' => 'Не смог разгадать капчу',

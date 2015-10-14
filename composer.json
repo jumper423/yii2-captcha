@@ -1,7 +1,7 @@
 {
   "name": "jumper423/yii2-captcha",
   "description": "Распознавание капч.",
-  "keywords": ["yii2", "captcha", "recognition"],
+  "keywords": ["yii2", "captcha", "recognition", "rucaptcha.com", "2captcha.com", "pixodrom.com", "captcha24.com", "socialink.ru", "rucaptcha", "2captcha", "pixodrom", "captcha24", "socialink"],
   "homepage": "https://github.com/jumper423/yii2-captcha",
   "type": "project",
   "license": "Apache License 2.0",

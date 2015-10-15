@@ -11,7 +11,7 @@ use yii\base\Exception;
  * Class Captcha
  * @package common\components
  */
-class Captcha extends Component
+class Captcha extends Component implements CaptchaInterface
 {
     /**
      * Сервис на который будем загружать капчу

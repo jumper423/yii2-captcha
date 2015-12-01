@@ -132,7 +132,7 @@ class Captcha extends Component implements CaptchaInterface
             $postData = [
                 'method' => 'post',
                 'key' => $this->apiKey,
-                'file' => '@' . $filename,
+                'file' => (version_compare(PHP_VERSION, '5.5.0') >= 0) ? new \CURLFile($filename):  '@' . $filename,
                 'phrase' => $this->isPhrase,
                 'regsense' => $this->isRegSense,
                 'numeric' => $this->isNumeric,

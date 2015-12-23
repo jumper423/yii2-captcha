@@ -143,7 +143,9 @@ class Captcha extends Component implements CaptchaInterface
             ];
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://{$this->domain}/in.php");
-            curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+            if (version_compare(PHP_VERSION, '5.5.0') >= 0) {
+                curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+            }
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_TIMEOUT, 60);
             curl_setopt($ch, CURLOPT_POST, 1);

@@ -27,7 +27,7 @@ class Captcha extends Component implements CaptchaInterface
      * Ваш API key
      * @var string
      */
-    public $apiKey;
+    private $apiKey;
     /**
      * false(commenting OFF), true(commenting ON)
      * @var bool
@@ -103,6 +103,15 @@ class Captcha extends Component implements CaptchaInterface
         'ERROR_WRONG_ID_FORMAT' => 'Неверный формат ID каптчи. ID должен содержать только цифры',
         'ERROR_WRONG_FILE_EXTENSION' => 'Ваша каптча имеет неверное расширение, допустимые расширения jpg,jpeg,gif,png',
     ];
+
+    public function setApiKey($apiKey)
+    {
+        if (is_callable($apiKey)){
+            $this->apiKey = $apiKey();
+        } else {
+            $this->apiKey = $apiKey;
+        }
+    }
 
     /**
      * Запуск распознавания капчи

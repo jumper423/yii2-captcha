@@ -104,9 +104,11 @@ class Captcha extends Component implements CaptchaInterface
         'ERROR_WRONG_FILE_EXTENSION' => 'Ваша каптча имеет неверное расширение, допустимые расширения jpg,jpeg,gif,png',
     ];
 
+    private $captcha_id;
+
     public function setApiKey($apiKey)
     {
-        if (is_callable($apiKey)){
+        if (is_callable($apiKey)) {
             $this->apiKey = $apiKey();
         } else {
             $this->apiKey = $apiKey;
@@ -141,7 +143,7 @@ class Captcha extends Component implements CaptchaInterface
             $postData = [
                 'method' => 'post',
                 'key' => $this->apiKey,
-                'file' => (version_compare(PHP_VERSION, '5.5.0') >= 0) ? new \CURLFile($filename):  '@' . $filename,
+                'file' => (version_compare(PHP_VERSION, '5.5.0') >= 0) ? new \CURLFile($filename) : '@' . $filename,
                 'phrase' => $this->isPhrase,
                 'regsense' => $this->isRegSense,
                 'numeric' => $this->isNumeric,
@@ -165,11 +167,11 @@ class Captcha extends Component implements CaptchaInterface
             }
             curl_close($ch);
             $this->setError($result);
-            list(, $captcha_id) = explode("|", $result);
+            list(, $this->captcha_id) = explode("|", $result);
             $waitTime = 0;
             sleep($this->requestTimeout);
             while (true) {
-                $result = file_get_contents("http://{$this->domain}/res.php?key={$this->apiKey}&action=get&id={$captcha_id}");
+                $result = file_get_contents("http://{$this->domain}/res.php?key={$this->apiKey}&action=get&id={$this->captcha_id}");
                 $this->setError($result);
                 if ($result == "CAPCHA_NOT_READY") {
                     $waitTime += $this->requestTimeout;
@@ -190,6 +192,14 @@ class Captcha extends Component implements CaptchaInterface
             $this->error = $e->getMessage();
             return false;
         }
+    }
+
+    /**
+     * Не верно распознана
+     */
+    public function notTrue()
+    {
+        file_get_contents("http://{$this->domain}/res.php?key={$this->apiKey}&action=reportbad&id={$this->captcha_id}");
     }
 
     /**

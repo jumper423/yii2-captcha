@@ -1,5 +1,7 @@
 Yii2 Captcha
 ================
+[![PHP version](https://badge.fury.io/ph/jumper423%2Fyii2-captcha.svg)](https://badge.fury.io/ph/jumper423%2Fyii2-captcha)
+
 Распознавание капч для всех популярных сервисов [rucaptcha.com](http://infoblog1.ru/goto/rucaptcha), 2captcha.com, pixodrom.com, captcha24.com, socialink.ru, anti-captcha.com
 
 [Вебсайт](http://infoblog1.ru/learn/cms/yii/raspoznavanie-kapch-na-yii2)
